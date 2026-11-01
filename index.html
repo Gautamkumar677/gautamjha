@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#071321">
+
+<title>Gautam Kumar Jha | Stock Market Education</title>
+<meta name="description" content="Indian stock market education, NIFTY, BANKNIFTY, SENSEX, technical analysis and risk management.">
+
+<!-- META PIXEL -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}
+(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init','1839050710479033');
+fbq('track','PageView');
+</script>
+
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1839050710479033&ev=PageView&noscript=1">
+</noscript>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --bg:#071321;
+    --bg2:#0c1c2d;
+    --card:#102238;
+    --gold:#e7bd70;
+    --gold-light:#f8dfaa;
+    --white:#ffffff;
+    --muted:#a5b2c3;
+    --line:rgba(255,255,255,.09);
+    --green:#44d5a0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg);
+    color:var(--white);
+    font-family:Arial,Helvetica,sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+}
+
+img{
+    max-width:100%;
+}
+
+.page{
+    width:100%;
+    overflow:hidden;
+}
+
+.container{
+    width:100%;
+    max-width:1080px;
+    margin:auto;
+    padding:0 24px;
+}
+
+/* HEADER */
+
+.header{
+    padding:15px 0;
+    border-bottom:1px solid var(--line);
+    background:rgba(7,19,33,.96);
+}
+
+.header-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.brand img{
+    width:49px;
+    height:49px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid var(--gold);
+    box-shadow:0 0 18px rgba(231,189,112,.15);
+}
+
+.brand-name{
+    font-size:13px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+.brand-sub{
+    font-size:9px;
+    color:var(--gold);
+    letter-spacing:1.4px;
+    margin-top:3px;
+}
+
+.header-label{
+    color:var(--gold-light);
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:1px;
+    padding:8px 13px;
+    border:1px solid rgba(231,189,112,.3);
+    border-radius:30px;
+}
+
+/* HERO */
+
+.hero{
+    padding:62px 0 55px;
+    background:
+    radial-gradient(ellipse at 85% 15%,rgba(42,91,132,.22),transparent 42%),
+    radial-gradient(ellipse at 5% 80%,rgba(231,189,112,.07),transparent 35%);
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    align-items:center;
+    gap:45px;
+}
+
+.hero-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    color:var(--gold-light);
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:1.5px;
+    padding:9px 13px;
+    background:rgba(231,189,112,.07);
+    border:1px solid rgba(231,189,112,.24);
+    border-radius:30px;
+}
+
+.tag-dot{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:var(--green);
+}
+
+.hero h1{
+    font-size:clamp(36px,5vw,58px);
+    font-weight:900;
+    line-height:1.08;
+    letter-spacing:-1.5px;
+    margin-top:22px;
+}
+
+.hero h1 span{
+    color:var(--gold);
+    display:block;
+}
+
+.hero-text{
+    max-width:460px;
+    color:#b5c1d0;
+    font-size:14px;
+    line-height:1.9;
+    margin-top:17px;
+}
+
+.index-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:9px;
+    margin:21px 0 23px;
+}
+
+.index-tags span{
+    color:var(--gold-light);
+    border:1px solid rgba(231,189,112,.25);
+    background:rgba(231,189,112,.06);
+    padding:8px 12px;
+    font-size:11px;
+    font-weight:800;
+    border-radius:7px;
+}
+
+/* JOIN BUTTON */
+
+.join-btn{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:11px;
+    width:100%;
+    max-width:390px;
+    min-height:60px;
+    padding:15px 18px;
+    color:#102034;
+    background:linear-gradient(110deg,#d4a85c,#f8dfaa,#dfb86c);
+    border-radius:12px;
+    font-size:14px;
+    font-weight:900;
+    letter-spacing:.5px;
+    box-shadow:0 9px 28px rgba(231,189,112,.18);
+    transition:transform .2s,box-shadow .2s;
+}
+
+.join-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 30px rgba(231,189,112,.28);
+}
+
+.join-btn:active{
+    transform:scale(.98);
+}
+
+.telegram-icon{
+    font-size:21px;
+}
+
+.join-note{
+    color:#91a0b2;
+    font-size:10px;
+    margin-top:11px;
+}
+
+/* HERO CHART */
+
+.visual-card{
+    position:relative;
+    min-height:340px;
+    padding:24px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    overflow:hidden;
+    border:1px solid rgba(231,189,112,.23);
+    border-radius:22px;
+    background:
+    radial-gradient(circle at 75% 10%,rgba(61,115,157,.23),transparent 45%),
+    linear-gradient(145deg,#142b43,#0a192b);
+    box-shadow:0 25px 65px rgba(0,0,0,.28);
+}
+
+.visual-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.visual-title{
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+.visual-subtitle{
+    color:var(--muted);
+    font-size:9px;
+    margin-top:4px;
+}
+
+.visual-symbol{
+    color:var(--gold);
+    font-size:25px;
+}
+
+.chart{
+    width:100%;
+    height:165px;
+}
+
+.chart svg{
+    width:100%;
+    height:100%;
+}
+
+.chart-grid{
+    stroke:rgba(255,255,255,.09);
+    stroke-width:1;
+    stroke-dasharray:4 5;
+}
+
+.chart-line{
+    fill:none;
+    stroke:#e9c77e;
+    stroke-width:3;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+.chart-fill{
+    fill:url(#chartGradient);
+}
+
+.visual-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-top:1px solid var(--line);
+    padding-top:14px;
+}
+
+.visual-bottom span{
+    font-size:10px;
+    color:#b8c5d5;
+}
+
+.visual-bottom strong{
+    color:var(--gold-light);
+    font-size:11px;
+}
+
+/* INDEX STRIP */
+
+.index-strip{
+    padding:20px 0;
+    background:#0d1c2c;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+}
+
+.index-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+}
+
+.index-item{
+    text-align:center;
+    padding:7px;
+    border-right:1px solid var(--line);
+}
+
+.index-item:last-child{
+    border-right:none;
+}
+
+.index-item strong{
+    display:block;
+    font-size:15px;
+    color:var(--gold-light);
+}
+
+.index-item span{
+    display:block;
+    color:#91a1b4;
+    font-size:10px;
+    margin-top:4px;
+}
+
+/* CONTENT SECTIONS */
+
+.section{
+    padding:62px 0;
+}
+
+.section-heading{
+    max-width:600px;
+    margin-bottom:27px;
+}
+
+.eyebrow{
+    color:var(--gold);
+    font-size:10px;
+    letter-spacing:2px;
+    font-weight:900;
+}
+
+.section-heading h2{
+    font-size:30px;
+    line-height:1.2;
+    margin-top:9px;
+}
+
+.section-heading p{
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.8;
+    margin-top:11px;
+}
+
+/* LEARNING CARDS */
+
+.learning-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:13px;
+}
+
+.learning-card{
+    padding:21px 16px;
+    min-height:180px;
+    background:linear-gradient(145deg,#142940,#0d1d30);
+    border:1px solid var(--line);
+    border-radius:14px;
+    transition:.2s;
+}
+
+.learning-card:hover{
+    transform:translateY(-3px);
+    border-color:rgba(231,189,112,.4);
+}
+
+.learning-icon{
+    width:43px;
+    height:43px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(231,189,112,.09);
+    border:1px solid rgba(231,189,112,.17);
+    border-radius:11px;
+    font-size:21px;
+}
+
+.learning-card h3{
+    font-size:13px;
+    margin-top:14px;
+}
+
+.learning-card p{
+    color:var(--muted);
+    font-size:11px;
+    line-height:1.7;
+    margin-top:7px;
+}
+
+/* ABOUT */
+
+.about{
+    padding:30px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:35px;
+    align-items:center;
+    background:linear-gradient(130deg,#13283e,#0d1a2b);
+    border:1px solid rgba(231,189,112,.17);
+    border-radius:19px;
+}
+
+.about h2{
+    font-size:27px;
+    line-height:1.3;
+    margin-top:10px;
+}
+
+.about h2 span{
+    color:var(--gold);
+}
+
+.about p{
+    font-size:12px;
+    color:#b0bdce;
+    line-height:1.9;
+}
+
+/* FINAL CTA */
+
+.final-section{
+    padding:50px 20px;
+    text-align:center;
+    border:1px solid rgba(231,189,112,.22);
+    border-radius:20px;
+    background:
+    radial-gradient(ellipse at top,rgba(231,189,112,.12),transparent 70%),
+    #0e1d2e;
+}
+
+.final-section h2{
+    font-size:30px;
+    line-height:1.3;
+    margin-top:8px;
+}
+
+.final-section h2 span{
+    color:var(--gold);
+}
+
+.final-section p{
+    max-width:460px;
+    margin:12px auto 22px;
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.8;
+}
+
+.final-section .join-btn{
+    margin:auto;
+}
+
+/* DISCLAIMER */
+
+.disclaimer{
+    margin-top:28px;
+    padding:18px;
+    background:#0b1827;
+    border:1px solid var(--line);
+    border-radius:12px;
+}
+
+.disclaimer h3{
+    font-size:11px;
+    color:var(--gold);
+    letter-spacing:1px;
+    margin-bottom:8px;
+}
+
+.disclaimer p{
+    font-size:10px;
+    color:#91a0b1;
+    line-height:1.9;
+}
+
+/* MAIN FOOTER */
+
+.footer{
+    padding:25px 0 30px;
+    text-align:center;
+    border-top:1px solid var(--line);
+    margin-top:30px;
+}
+
+.footer p{
+    font-size:10px;
+    color:#8797aa;
+}
+
+.footer a{
+    color:var(--gold);
+    font-size:10px;
+    margin:0 8px;
+}
+
+.footer-links{
+    margin:10px 0;
+}
+
+/* ADSBUILD AGENCY FOOTER */
+
+.agency-footer{
+    width:100%;
+    margin-top:18px;
+    padding:20px 14px 22px;
+    text-align:center;
+    background:linear-gradient(
+        180deg,
+        #0b1a2a 0%,
+        #071321 100%
+    );
+    border:1px solid rgba(231,189,112,.18);
+    border-radius:12px;
+}
+
+.agency-footer-inner{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:7px;
+}
+
+.powered-text{
+    color:#8d9caf;
+    font-size:9px;
+    font-weight:800;
+    letter-spacing:2px;
+}
+
+.agency-link{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    color:#f3d49a !important;
+    font-size:15px !important;
+    font-weight:900;
+    letter-spacing:.4px;
+    text-decoration:none !important;
+    transition:transform .25s ease,color .25s ease;
+}
+
+.agency-link:hover{
+    color:#ffffff !important;
+    transform:translateY(-2px);
+}
+
+.agency-icon,
+.agency-arrow{
+    color:#e7bd70;
+    font-size:15px;
+}
+
+.agency-tagline{
+    color:#78899e;
+    font-size:8px;
+    font-weight:700;
+    letter-spacing:1.4px;
+    margin-top:2px;
+}
+
+/* MOBILE STICKY JOIN BAR */
+
+.mobile-join{
+    display:none;
+}
+
+/* TABLET */
+
+@media(max-width:850px){
+
+    .hero-grid{
+        gap:25px;
+    }
+
+    .learning-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .hero{
+        padding:45px 0;
+    }
+
+    .visual-card{
+        min-height:300px;
+    }
+}
+
+/* MOBILE OPTIMIZATION */
+
+@media(max-width:600px){
+
+    body{
+        padding-bottom:83px;
+    }
+
+    .container{
+        padding:0 17px;
+    }
+
+    /* HEADER */
+
+    .header{
+        padding:11px 0;
+    }
+
+    .brand{
+        gap:10px;
+    }
+
+    .brand img{
+        width:43px;
+        height:43px;
+    }
+
+    .brand-name{
+        font-size:11px;
+        letter-spacing:.5px;
+    }
+
+    .brand-sub{
+        font-size:8px;
+        letter-spacing:1px;
+    }
+
+    .header-label{
+        font-size:8px;
+        padding:6px 10px;
+    }
+
+    /* HERO */
+
+    .hero{
+        padding:29px 0 26px;
+    }
+
+    .hero-grid{
+        display:flex;
+        flex-direction:column;
+        align-items:stretch;
+        gap:23px;
+    }
+
+    .hero-content{
+        width:100%;
+    }
+
+    .hero-tag{
+        font-size:9px;
+        padding:8px 11px;
+        letter-spacing:1px;
+    }
+
+    .hero h1{
+        font-size:clamp(35px,10vw,43px);
+        line-height:1.07;
+        letter-spacing:-1.2px;
+        margin-top:17px;
+    }
+
+    .hero-text{
+        font-size:12px;
+        line-height:1.75;
+        margin-top:13px;
+        max-width:100%;
+    }
+
+    .index-tags{
+        gap:7px;
+        margin:15px 0 17px;
+    }
+
+    .index-tags span{
+        font-size:9px;
+        padding:7px 10px;
+    }
+
+    /* BIG MOBILE BUTTON */
+
+    .join-btn{
+        max-width:none;
+        min-height:59px;
+        border-radius:12px;
+        font-size:13px;
+        letter-spacing:.4px;
+        padding:14px 12px;
+        gap:9px;
+    }
+
+    .telegram-icon{
+        font-size:20px;
+    }
+
+    .join-note{
+        font-size:10px;
+        margin-top:9px;
+    }
+
+    /* CHART */
+
+    .visual-card{
+        min-height:235px;
+        padding:17px;
+        border-radius:17px;
+    }
+
+    .visual-title{
+        font-size:10px;
+    }
+
+    .visual-subtitle{
+        font-size:9px;
+    }
+
+    .chart{
+        height:120px;
+    }
+
+    .visual-bottom{
+        padding-top:11px;
+    }
+
+    .visual-bottom span,
+    .visual-bottom strong{
+        font-size:9px;
+    }
+
+    /* INDEX STRIP */
+
+    .index-strip{
+        padding:14px 0;
+    }
+
+    .index-item{
+        padding:5px 2px;
+    }
+
+    .index-item strong{
+        font-size:11px;
+    }
+
+    .index-item span{
+        font-size:8px;
+    }
+
+    /* SECTIONS */
+
+    .section{
+        padding:39px 0;
+    }
+
+    .section-heading{
+        margin-bottom:19px;
+    }
+
+    .eyebrow{
+        font-size:9px;
+        letter-spacing:1.5px;
+    }
+
+    .section-heading h2{
+        font-size:24px;
+        line-height:1.25;
+        margin-top:7px;
+    }
+
+    .section-heading p{
+        font-size:11px;
+        line-height:1.75;
+        margin-top:8px;
+    }
+
+    /* TWO COLUMN CARDS */
+
+    .learning-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:10px;
+    }
+
+    .learning-card{
+        min-height:157px;
+        padding:14px 12px;
+        border-radius:12px;
+    }
+
+    .learning-icon{
+        width:38px;
+        height:38px;
+        font-size:18px;
+        border-radius:10px;
+    }
+
+    .learning-card h3{
+        font-size:11px;
+        line-height:1.35;
+        margin-top:12px;
+    }
+
+    .learning-card p{
+        font-size:9px;
+        line-height:1.6;
+        margin-top:6px;
+    }
+
+    /* ABOUT */
+
+    .about{
+        grid-template-columns:1fr;
+        gap:12px;
+        padding:21px 17px;
+        border-radius:15px;
+    }
+
+    .about h2{
+        font-size:23px;
+        margin-top:7px;
+    }
+
+    .about p{
+        font-size:11px;
+        line-height:1.8;
+    }
+
+    /* FINAL CTA */
+
+    .final-section{
+        padding:32px 16px;
+        border-radius:16px;
+    }
+
+    .final-section h2{
+        font-size:24px;
+        line-height:1.25;
+    }
+
+    .final-section p{
+        font-size:11px;
+        margin:10px auto 18px;
+    }
+
+    .disclaimer{
+        margin-top:19px;
+        padding:14px;
+    }
+
+    .disclaimer p{
+        font-size:9px;
+        line-height:1.75;
+    }
+
+    /* FOOTER */
+
+    .footer{
+        padding:20px 0 25px;
+        margin-top:20px;
+    }
+
+    .agency-footer{
+        margin-top:14px;
+        padding:18px 12px 20px;
+    }
+
+    .agency-link{
+        font-size:14px !important;
+    }
+
+    .agency-tagline{
+        font-size:7px;
+        letter-spacing:1.1px;
+    }
+
+    /* FIXED BOTTOM CTA */
+
+    .mobile-join{
+        display:block;
+        position:fixed;
+        z-index:9999;
+        left:0;
+        right:0;
+        bottom:0;
+        padding:10px 15px calc(10px + env(safe-area-inset-bottom));
+        background:rgba(7,19,33,.97);
+        border-top:1px solid rgba(231,189,112,.22);
+        backdrop-filter:blur(12px);
+        -webkit-backdrop-filter:blur(12px);
+    }
+
+    .mobile-join .join-btn{
+        min-height:53px;
+        max-width:520px;
+        margin:auto;
+        border-radius:11px;
+        font-size:12px;
+        box-shadow:0 5px 20px rgba(231,189,112,.18);
+    }
+}
+
+/* EXTRA SMALL MOBILE */
+
+@media(max-width:360px){
+
+    .container{
+        padding-left:14px;
+        padding-right:14px;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .brand-name{
+        font-size:10px;
+    }
+
+    .header-label{
+        font-size:7px;
+    }
+
+    .learning-card{
+        padding:12px 10px;
+    }
+
+    .learning-card h3{
+        font-size:10px;
+    }
+
+    .learning-card p{
+        font-size:8.5px;
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media(prefers-reduced-motion:reduce){
+
+    html{
+        scroll-behavior:auto;
+    }
+
+    *{
+        transition:none !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="page" id="top">
+
+<!-- HEADER -->
+
+<header class="header">
+    <div class="container header-inner">
+
+        <div class="brand">
+
+            <img
+                src="https://i.ibb.co/J6zCLsZ/Cb0-99-C8-VQ-hp-Twsj3r-Re-P6-A5p-Fy5ft-QKHo-GKr6opt08o-Ce-W6mnexh-Re4pgtb1sjuby-Iic-KNTEPr-MMCBYNRin6-Fe.jpg"
+                alt="Gautam Kumar Jha Logo"
+            >
+
+            <div>
+                <div class="brand-name">GAUTAM KUMAR JHA</div>
+                <div class="brand-sub">STOCK MARKET EDUCATION</div>
+            </div>
+
+        </div>
+
+        <div class="header-label">INDIA</div>
+
+    </div>
+</header>
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-grid">
+
+            <div class="hero-content">
+
+                <div class="hero-tag">
+                    <span class="tag-dot"></span>
+                    INDIAN STOCK MARKET EDUCATION
+                </div>
+
+                <h1>
+                    UNDERSTAND
+                    THE <span>MARKET.</span>
+                </h1>
+
+                <p class="hero-text">
+                    Welcome to the educational community of Gautam Kumar Jha.
+                    Explore Indian stock market concepts, technical analysis,
+                    chart learning and responsible trading knowledge.
+                </p>
+
+                <div class="index-tags">
+                    <span>NIFTY 50</span>
+                    <span>BANKNIFTY</span>
+                    <span>SENSEX</span>
+                </div>
+
+                <a
+                    class="join-btn"
+                    href="https://t.me/+SCbu0peVvQVmZjY1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onclick="trackTelegram('hero')"
+                >
+                    <span class="telegram-icon">➤</span>
+                    JOIN TELEGRAM COMMUNITY
+                </a>
+
+                <div class="join-note">
+                    Learn • Understand • Grow
+                </div>
+
+            </div>
+
+            <!-- CHART CARD -->
+
+            <div class="visual-card">
+
+                <div class="visual-top">
+                    <div>
+                        <div class="visual-title">MARKET LEARNING</div>
+                        <div class="visual-subtitle">Educational chart illustration</div>
+                    </div>
+                    <div class="visual-symbol">↗</div>
+                </div>
+
+                <div class="chart">
+
+                    <svg viewBox="0 0 400 180" preserveAspectRatio="none">
+
+                        <defs>
+                            <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#e7bd70" stop-opacity=".28"/>
+                                <stop offset="100%" stop-color="#e7bd70" stop-opacity="0"/>
+                            </linearGradient>
+                        </defs>
+
+                        <line class="chart-grid" x1="0" y1="30" x2="400" y2="30"/>
+                        <line class="chart-grid" x1="0" y1="75" x2="400" y2="75"/>
+                        <line class="chart-grid" x1="0" y1="120" x2="400" y2="120"/>
+                        <line class="chart-grid" x1="0" y1="165" x2="400" y2="165"/>
+
+                        <path class="chart-fill"
+                            d="M0 135 L38 112 L75 126 L110 85 L145 101 L180 65 L215 88 L250 48 L285 62 L325 25 L360 45 L400 12 L400 180 L0 180 Z"/>
+
+                        <path class="chart-line"
+                            d="M0 135 L38 112 L75 126 L110 85 L145 101 L180 65 L215 88 L250 48 L285 62 L325 25 L360 45 L400 12"/>
+
+                    </svg>
+
+                </div>
+
+                <div class="visual-bottom">
+                    <span>Market concepts</span>
+                    <strong>LEARN & ANALYSE</strong>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- INDEX STRIP -->
+
+<section class="index-strip">
+    <div class="container index-grid">
+
+        <div class="index-item">
+            <strong>NIFTY 50</strong>
+            <span>Equity Index</span>
+        </div>
+
+        <div class="index-item">
+            <strong>BANKNIFTY</strong>
+            <span>Banking Index</span>
+        </div>
+
+        <div class="index-item">
+            <strong>SENSEX</strong>
+            <span>Market Index</span>
+        </div>
+
+    </div>
+</section>
+
+<!-- LEARNING SECTION -->
+
+<section class="section">
+    <div class="container">
+
+        <div class="section-heading">
+            <div class="eyebrow">OUR EDUCATIONAL APPROACH</div>
+
+            <h2>Knowledge Builds Better Decisions.</h2>
+
+            <p>
+                Explore important topics and build your understanding
+                of the Indian financial markets.
+            </p>
+        </div>
+
+        <div class="learning-grid">
+
+            <div class="learning-card">
+                <div class="learning-icon">📊</div>
+                <h3>Technical Analysis</h3>
+                <p>Learn charts, indicators, price action and market patterns.</p>
+            </div>
+
+            <div class="learning-card">
+                <div class="learning-icon">📚</div>
+                <h3>Market Fundamentals</h3>
+                <p>Understand market structure, indices and basic concepts.</p>
+            </div>
+
+            <div class="learning-card">
+                <div class="learning-icon">🎯</div>
+                <h3>Trading Concepts</h3>
+                <p>Explore trading terminology and educational strategies.</p>
+            </div>
+
+            <div class="learning-card">
+                <div class="learning-icon">🛡️</div>
+                <h3>Risk Management</h3>
+                <p>Understand financial risk, discipline and trading psychology.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- ABOUT COMMUNITY -->
+
+<section class="section" style="padding-top:0;">
+    <div class="container">
+
+        <div class="about">
+
+            <div>
+                <div class="eyebrow">ABOUT THE COMMUNITY</div>
+
+                <h2>
+                    Learn.<br>
+                    <span>Understand.</span><br>
+                    Grow.
+                </h2>
+            </div>
+
+            <div>
+                <p>
+                    This community focuses on Indian stock market education,
+                    market-related learning and financial awareness.
+                    <br><br>
+                    Explore chart concepts, understand market terminology
+                    and develop a responsible approach to financial learning.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- FINAL CTA -->
+
+<section class="section" style="padding-top:8px;">
+    <div class="container">
+
+        <div class="final-section">
+
+            <div class="eyebrow">YOUR LEARNING JOURNEY</div>
+
+            <h2>
+                Explore The Market.<br>
+                <span>Grow Your Knowledge.</span>
+            </h2>
+
+            <p>
+                Join the Telegram community to explore stock market
+                educational content and discussions.
+            </p>
+
+            <a
+                class="join-btn"
+                href="https://t.me/+ri-3rFsjZFszOTBl"
+                target="_blank"
+                rel="noopener noreferrer"
+                onclick="trackTelegram('bottom')"
+            >
+                <span class="telegram-icon">➤</span>
+                JOIN COMMUNITY NOW
+            </a>
+
+        </div>
+
+        <!-- DISCLAIMER -->
+
+        <div class="disclaimer">
+
+            <h3>IMPORTANT DISCLAIMER</h3>
+
+            <p>
+                This website and its linked community are intended for
+                educational and informational purposes only. The content
+                does not constitute investment advice or a recommendation
+                to buy or sell securities. Stock market investments involve
+                financial risks. No profit or return is guaranteed. Please
+                conduct independent research and consult a qualified
+                financial advisor before making investment decisions.
+            </p>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+    <div class="container">
+
+        <p>© 2026 Gautam Kumar Jha. All Rights Reserved.</p>
+
+        <div class="footer-links">
+
+            <a
+                href="https://t.me/+SCbu0peVvQVmZjY1"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Telegram
+            </a>
+
+            <a href="#top">Back to Top</a>
+
+        </div>
+
+        <p>Indian Stock Market Education</p>
+
+        <!-- ADSBUILD AGENCY CREDIT -->
+
+        <div class="agency-footer">
+
+            <div class="agency-footer-inner">
+
+                <span class="powered-text">POWERED BY</span>
+
+                <a
+                    href="https://telegram.me/+mBnWzx227W5lMGY1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="agency-link"
+                >
+                    <span class="agency-icon">✦</span>
+                    AdsBuild Agency
+                    <span class="agency-arrow">↗</span>
+                </a>
+
+                <span class="agency-tagline">
+                    DIGITAL GROWTH • CREATIVE SOLUTIONS
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+</footer>
+
+</div>
+
+<!-- MOBILE FIXED JOIN BUTTON -->
+
+<div class="mobile-join">
+
+    <a
+        class="join-btn"
+        href="https://t.me/+SCbu0peVvQVmZjY1"
+        target="_blank"
+        rel="noopener noreferrer"
+        onclick="trackTelegram('mobile_sticky')"
+    >
+        <span class="telegram-icon">➤</span>
+        JOIN TELEGRAM COMMUNITY
+    </a>
+
+</div>
+
+<!-- TELEGRAM CLICK TRACKING -->
+
+<script>
+function trackTelegram(position){
+
+    if(typeof window.fbq === 'function'){
+
+        window.fbq(
+            'trackCustom',
+            'TelegramClick',
+            {
+                button_location:position,
+                content_name:'Gautam Kumar Jha Stock Market Education'
+            }
+        );
+
+    }
+
+}
+</script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1138343241996978');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1138343241996978&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</body>
+</html>
